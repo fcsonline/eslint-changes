@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'eslint/changes/checker'
+require 'eslint/changes/options'
+
+args = Eslint::Changes::Options.new.parse!
+
+offenses = Eslint::Changes::Checker.new(
+  report: args.report,
+  quiet: args.quiet,
+  commit: args.commit,
+  base_branch: args.base_branch
+).run
+
+exit offenses.positive? ? 1 : 0

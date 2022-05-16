@@ -1,0 +1,13 @@
+diff --git a/components/Bio.js b/components/Bio.js
+index b2a293b..14b1290 100644
+--- a/components/Bio.js
++++ b/components/Bio.js
+@@ -5,7 +5,7 @@ import Image from 'next/image'
+ import { getSiteMetaData } from 'utils/helpers'
+ 
+ const Bio = ({ className }) => {
+-  const { author, social } = getSiteMetaData()
++        const { author, social } =    getSiteMetaData()
+ 
+   return (
+     <div className={clsx('flex flex-row', className)}>
